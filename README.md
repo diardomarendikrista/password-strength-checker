@@ -1,12 +1,50 @@
-# React + Vite
+# React Password Strength Meter
+Antarmuka pengguna (UI) pengukur kekuatan kata sandi yang sederhana dan interaktif, dibuat dengan React dan Vite. Menggunakan Library `zxcvbn` untuk penilaian kekuatan yang akurat dan Tailwind CSS untuk style. Juga ada fungsi untuk cara mentranslate nya secara manual, karena `zxcvbn` hanya mendukung bahasa inggris.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Fitur
 
-Currently, two official plugins are available:
+* **Indikator Kekuatan Real-time:** Menampilkan kekuatan kata sandi secara visual (lemah, sedang, kuat) saat Anda mengetik.
+* **Penilaian Canggih (`zxcvbn`):** Menggunakan library `zxcvbn` dari Dropbox untuk penilaian kekuatan kata sandi yang cerdas, mengenali pola umum, kata-kata kamus, dan informasi yang mudah ditebak.
+* **Umpan Balik yang Membantu:** Memberikan saran dan peringatan yang jelas untuk membantu pengguna membuat kata sandi yang lebih kuat.
+* **Dukungan Multi-bahasa:** Saya membuat contoh fungsi cara mentranslate hasil dari library `zxcvbn`
+* **Desain Responsif & Modern:** Dibuat dengan Tailwind CSS untuk tampilan yang bersih dan dapat disesuaikan.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Pratinjau
 
-## Expanding the ESLint configuration
+![Password Strength Meter Preview](https://i.imgur.com/8SU6w13.jpeg)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Demo Langsung
+
+Lihat aplikasi ini beraksi: [https://d-password-check.netlify.app/](https://d-password-check.netlify.app/)
+
+## Teknologi yang Digunakan
+
+* **React:** Library JavaScript untuk membangun antarmuka pengguna.
+* **Vite:** Tooling frontend generasi selanjutnya yang cepat.
+* **zxcvbn:** Library penilaian kekuatan kata sandi oleh Dropbox.
+* **Tailwind CSS:** Kerangka kerja CSS utilitas-pertama untuk styling yang cepat.
+
+## Instalasi dan Penggunaan
+
+Ikuti langkah-langkah di bawah ini untuk menjalankan proyek secara lokal:
+
+1.  **Clone repositori:**
+    ```bash
+    git clone https://github.com/diardomarendikrista/password-strength-checker
+    cd password-strength-checker # Atau nama folder tempat Anda mengkloning
+    ```
+
+2.  **Instal dependensi:**
+    ```bash
+    npm install
+    # atau
+    yarn install
+    ```
+
+3.  **Jalankan aplikasi dalam mode pengembangan:**
+    ```bash
+    npm run dev
+    # atau
+    yarn dev
+    ```
+    Aplikasi akan berjalan di `http://localhost:3000`
