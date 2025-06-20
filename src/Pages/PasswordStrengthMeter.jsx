@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
+import LanguangeSelector from "Components/languangeSelector";
+import translateFeedback from "Components/translateFeedback";
 import zxcvbn from "zxcvbn";
-import translateFeedback from "translateFeedback";
-import LanguangeSelector from "languangeSelector";
 
 const PasswordStrengthMeter = () => {
   const [password, setPassword] = useState("");
   const [strength, setStrength] = useState(0); // zxcvbn output score akan (0-4)
   const [feedback, setFeedback] = useState({ suggestions: [], warning: "" });
-  const [language, setLanguage] = useState("EN"); // Default ke EN
+  const [language, setLanguage] = useState("en"); // Default ke EN
 
   const getStrengthColor = () => {
     switch (strength) {
@@ -47,15 +47,15 @@ const PasswordStrengthMeter = () => {
     if (password) {
       const result = zxcvbn(password);
 
-      if (language === "EN") {
+      if (language === "en") {
+        // en tidak perlu translate
         setStrength(result.score);
         setFeedback({
           suggestions: result.feedback?.suggestions,
           warning: result.feedback?.warning,
         });
       } else {
-        // kalau mau translated
-        const translated = translateFeedback(result.feedback);
+        const translated = translateFeedback(result.feedback, language);
         setStrength(result.score);
         setFeedback({
           suggestions: translated.suggestions,
@@ -113,7 +113,7 @@ const PasswordStrengthMeter = () => {
                 </p>
               )}
               {feedback?.suggestions?.length > 0 && (
-                <ul className="list-disc list-inside text-gray-600">
+                <ul className="list-disc list-outside text-gray-600 ml-5">
                   {feedback?.suggestions?.map((suggestion, index) => (
                     <li key={index}>{suggestion}</li>
                   ))}

@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "dictionary.js",
+      "options": {
+        "printWidth": 1000
+      }
+    }
+  ]
+}

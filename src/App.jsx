@@ -1,4 +1,4 @@
-import PasswordStrengthMeter from "./PasswordStrengthMeter";
+import PasswordStrengthMeter from "./Pages/PasswordStrengthMeter";
 
 function App() {
   return (
